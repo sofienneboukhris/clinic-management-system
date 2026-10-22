@@ -1,0 +1,6660 @@
+/* ============================================================================
+   ملف التنسيقات الرئيسي (index.css)
+   مصمم بأسلوب بسيط وواضح للمبتدئين، يدعم اللغة العربية (RTL)
+   ومتجاوب مع شاشات الكمبيوتر (Desktop) والموبايل (Mobile)
+   ============================================================================ */
+
+:root {
+  --bg-page: #f4f7fb;
+  --bg-card: #ffffff;
+  --primary: #0f766e;         /* لون أخضر طبي مريح للعين */
+  --primary-light: #ccfbf1;
+  --primary-dark: #115e59;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --highlight-border: #0d9488;
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* حاوية وسطية لضبط عرض المحتوى على الشاشات الكبيرة والصغيرة */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================================
+   1. تنسيقات الشريط العلوي وقائمة التنقل (Header & Navigation)
+   ============================================================================ */
+.site-header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  font-size: 2rem;
+  background-color: var(--primary-light);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.brand-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.version-badge {
+  font-size: 0.75rem;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* قائمة التنقل في الديسكتوب */
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #f1f5f9;
+}
+
+.nav-link.active {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* زر الموبايل (مخفي على الديسكتوب) */
+.mobile-menu-btn {
+  display: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary);
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ============================================================================
+   2. المحتوى الرئيسي واللافتة الترحيبية
+   ============================================================================ */
+.main-content {
+  flex: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.welcome-banner {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.banner-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.banner-label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.banner-heading {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.banner-description {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.banner-roles-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 260px;
+}
+
+.role-pill {
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+}
+
+/* ============================================================================
+   3. شبكة البطاقات التجريبية (Stats & Demo Cards)
+   ============================================================================ */
+.section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* شبكة الإحصائيات السريعة (4 أعمدة على الديسكتوب، وتستجيب للموبايل) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.15rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.stat-badge {
+  font-size: 0.75rem;
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 0.35rem;
+}
+
+.stat-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* شبكة البطاقات التوضيحية للأقسام (عمودان على الديسكتوب، عمود واحد على الموبايل) */
+.demo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.demo-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* تمييز البطاقة عند اختيار القسم الخاص بها من القائمة العلوية */
+.card-highlighted {
+  border: 2px solid var(--highlight-border);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.15);
+}
+
+.demo-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.demo-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.role-tag {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.demo-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.demo-item {
+  background-color: #f8fafc;
+  border-right: 3px solid var(--primary);
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.demo-card-footer {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+/* ============================================================================
+   4. التذييل (Footer)
+   ============================================================================ */
+.site-footer {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ============================================================================
+   5. التجاوب مع الشاشات المتوسطة والموبايل (Responsive Design)
+   ============================================================================ */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* إظهار زر القائمة في الموبايل وتحويل القائمة إلى قائمة منسدلة واضحة */
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+  }
+
+  .main-nav.nav-open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .stats-grid,
+  .demo-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-banner {
+    padding: 1.15rem;
+  }
+}
+
+/* ============================================================================
+   6. تنسيقات لوحة التحكم الاحترافية (Dashboard Professional Styles)
+   ============================================================================ */
+
+/* شريط ترويسة لوحة التحكم */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.dashboard-top-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-top-bar__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dashboard-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-main-heading {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.live-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.live-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.dashboard-sub-heading {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.dashboard-date-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  width: fit-content;
+}
+
+.dashboard-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* الأزرار الرئيسية والثانوية */
+.btn-action-primary {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.2);
+}
+
+.btn-action-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.28);
+}
+
+.btn-action-secondary {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.65rem 1.15rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-action-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* شبكة البطاقات الإحصائية الأربع */
+.dashboard-stats-section {
+  width: 100%;
+}
+
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.metric-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+}
+
+.metric-card--blue::before { background-color: #2563eb; }
+.metric-card--indigo::before { background-color: #4f46e5; }
+.metric-card--emerald::before { background-color: #059669; }
+.metric-card--amber::before { background-color: #d97706; }
+
+.metric-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.metric-card__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.metric-card__icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover .metric-card__icon-wrap {
+  transform: scale(1.06);
+}
+
+.metric-card__icon-wrap--blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.metric-card__icon-wrap--indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.metric-card__icon-wrap--emerald {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.metric-card__icon-wrap--amber {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.metric-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.metric-card__value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.metric-card__value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+  font-feature-settings: 'tnum';
+}
+
+.metric-card__unit {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.metric-card__subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* شبكة أقسام الجداول */
+.dashboard-content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.dashboard-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dashboard-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.dashboard-panel__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.dashboard-panel__subtitle {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.panel-link-btn {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.panel-link-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* تنسيق الجداول المنظمة */
+.table-responsive-desktop {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.custom-data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.92rem;
+  text-align: right;
+}
+
+.custom-data-table th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.custom-data-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.data-table-row {
+  transition: background-color 0.15s ease;
+}
+
+.data-table-row:hover {
+  background-color: #f8fafc;
+}
+
+.patient-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.patient-avatar-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.time-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.font-numeric {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.invoice-code-tag {
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid #e2e8f0;
+  display: inline-block;
+}
+
+/* شارات الحالات (Status Badges) */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.badge-status--confirmed {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-status--waiting {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-status--completed {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-status--cancelled {
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.badge-status--followup {
+  background-color: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.badge-status--paid {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-status--partial {
+  background-color: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+.badge-status--unpaid {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-status--overdue {
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.badge-status--default {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+/* شارات نوع الزيارة */
+.badge-pill {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-pill--teal {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.badge-pill--blue {
+  background-color: #eff6ff;
+  color: #1e40af;
+}
+
+.badge-pill--purple {
+  background-color: #faf5ff;
+  color: #6b21a8;
+}
+
+.badge-pill--slate {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+/* زر عرض التفاصيل */
+.btn-action-view {
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  border: 1px solid transparent;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.btn-action-view:hover {
+  background-color: #0d9488;
+  color: #ffffff;
+}
+
+.text-emerald {
+  color: #059669;
+}
+
+.text-danger {
+  color: #dc2626;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.border-top-light {
+  border-top: 1px solid #f1f5f9;
+}
+
+/* كروت الموبايل للمواعيد والفواتير (مخفية على الديسكتوب) */
+.mobile-cards-list {
+  display: none;
+}
+
+.mobile-record-card {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s ease;
+}
+
+.mobile-record-card:hover {
+  border-color: #cbd5e1;
+}
+
+.mobile-record-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.mobile-record-card__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.mobile-record-card__sub-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  margin-top: 0.25rem;
+}
+
+.text-separator {
+  color: #cbd5e1;
+}
+
+.mobile-record-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-action-view--mobile {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.86rem;
+  min-height: 40px;
+}
+
+.mobile-invoice-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mobile-amounts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.mobile-amount-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+/* النوافذ المنبثقة التفاعلية (Modals) */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: modal-fade-in 0.2s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-container {
+  background-color: #ffffff;
+  border-radius: 18px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: modal-slide-up 0.25s ease-out;
+}
+
+@keyframes modal-slide-up {
+  from { transform: translateY(12px) scale(0.98); }
+  to { transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.85rem;
+}
+
+.modal-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header-icon--teal {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.modal-header-icon--indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.modal-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.modal-close-btn {
+  margin-right: auto;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--text-main);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+}
+
+.btn-cancel {
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  border: none;
+  padding: 0.65rem 1.15rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #e2e8f0;
+}
+
+.btn-submit {
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.35rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+}
+
+/* نافذة عرض التفاصيل */
+.detail-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.85rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+}
+
+.detail-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-size: 0.92rem;
+  color: var(--text-main);
+}
+
+.detail-notes-box {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 0.85rem;
+  font-size: 0.88rem;
+  color: #166534;
+  line-height: 1.5;
+}
+
+/* إشعار Toast السريع */
+.dashboard-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  z-index: 120;
+  animation: toast-pop 0.25s ease-out;
+}
+
+@keyframes toast-pop {
+  from { transform: translate(-50%, 15px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.toast-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+
+/* بطاقات حالات الخطأ والفراغ (Error & Empty States) */
+.state-feedback-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.state-feedback-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.state-feedback-icon--error {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.state-feedback-icon--empty {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.state-feedback-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.state-feedback-message {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 440px;
+}
+
+.state-feedback-card--empty {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  box-shadow: none;
+  padding: 3rem 1.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.state-feedback-card--empty .state-feedback-icon--empty {
+  background-color: #e2e8f0;
+  color: #0f766e;
+  border: 1px solid #cbd5e1;
+}
+
+.state-feedback-card--empty .btn-action-primary {
+  margin-top: 0.5rem;
+}
+
+.btn-retry {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-retry:hover {
+  background-color: #b91c1c;
+}
+
+/* هيكل التحميل Skeleton */
+.dashboard-skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.skeleton-header-row {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid var(--border-color);
+}
+
+.skeleton-line {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 6px;
+}
+
+.skeleton-title-line {
+  width: 200px;
+  height: 28px;
+}
+
+.skeleton-subtitle-line {
+  width: 320px;
+  height: 18px;
+}
+
+.skeleton-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.skeleton-card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* هيكل التحميل المطور (Skeleton Loaders) */
+.skeleton-bar {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite ease-in-out;
+  border-radius: 6px;
+}
+
+.skeleton-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-avatar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+}
+
+.skeleton-bar--title { width: 90px; height: 16px; }
+.skeleton-bar--value { width: 120px; height: 34px; margin-bottom: 0.35rem; }
+.skeleton-bar--subtitle { width: 170px; height: 14px; }
+
+.skeleton-bar--panel-title { width: 150px; height: 22px; }
+.skeleton-bar--panel-subtitle { width: 220px; height: 14px; margin-top: 0.35rem; }
+.skeleton-bar--link { width: 110px; height: 18px; }
+
+.skeleton-bar--th { width: 65px; height: 14px; }
+.skeleton-bar--cell-name { width: 110px; height: 16px; }
+.skeleton-bar--cell-sm { width: 75px; height: 15px; }
+.skeleton-bar--pill { width: 68px; height: 22px; border-radius: 999px; }
+.skeleton-bar--btn { width: 70px; height: 28px; border-radius: 8px; }
+
+.skeleton-bar--heading { width: 150px; height: 32px; }
+.skeleton-bar--sub { width: 220px; height: 16px; margin-top: 0.4rem; }
+.skeleton-bar--date { width: 140px; height: 24px; margin-top: 0.4rem; border-radius: 8px; }
+.skeleton-bar--btn-action { width: 130px; height: 42px; border-radius: 10px; }
+
+.skeleton-bar--mobile-title { width: 130px; height: 18px; }
+.skeleton-bar--mobile-meta { width: 170px; height: 14px; margin: 0.5rem 0; }
+.skeleton-bar--mobile-btn { width: 100%; height: 36px; border-radius: 8px; }
+
+.skeleton-metric-card {
+  pointer-events: none;
+}
+
+.skeleton-dashboard-panel {
+  pointer-events: none;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+/* تنسيق الخطأ الجزئي للبطاقات أو الأقسام المنفردة */
+.section-inline-error-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  color: #991b1b;
+  font-size: 0.92rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.section-inline-error-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-retry--sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.84rem;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================================================
+   7. التجاوب الشامل مع الشاشات (Responsive Adaptations)
+   ============================================================================ */
+
+/* شاشات الأجهزة اللوحية (Tablet: 641px - 1023px) */
+@media (max-width: 1023px) {
+  .stats-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* شاشات الهواتف الذكية (Mobile: <= 768px) */
+@media (max-width: 768px) {
+  .dashboard-top-bar {
+    padding: 1.15rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .dashboard-actions-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-action-primary,
+  .btn-action-secondary {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px; /* تحسين تجربة اللمس */
+  }
+
+  .stats-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .metric-card {
+    padding: 1.15rem;
+  }
+
+  .metric-card__value {
+    font-size: 1.65rem;
+  }
+
+  .dashboard-panel {
+    padding: 1.15rem;
+  }
+
+  /* إخفاء الجداول التقليدية على الموبايل وإظهار البطاقات الملخصة لتجنب التمرير الأفقي */
+  .table-responsive-desktop {
+    display: none;
+  }
+
+  .mobile-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-container {
+    padding: 1.15rem;
+  }
+}
+
+.panel-empty-notice {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  border: 1px dashed var(--border-color);
+}
+
+.alert-box-notice {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   7. تنسيقات صفحة إضافة مريض جديد (Add Patient Page Styles)
+   واجهة عربية متكاملة RTL، متجاوبة (عمودان ديسكتوب / عمود واحد موبايل)
+   ============================================================================ */
+
+.add-patient-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* ترويسة صفحة المريض */
+.patient-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+
+.patient-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.patient-header-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.patient-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.patient-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+.breadcrumb-current {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.patient-main-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.patient-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.patient-back-btn {
+  align-self: center;
+}
+
+/* إشعارات التنبيه والنجاح */
+.patient-alert-success {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 14px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: #065f46;
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+
+.patient-alert-danger {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 14px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: #991b1b;
+  box-shadow: var(--shadow-sm);
+}
+
+.alert-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alert-body {
+  flex: 1;
+  min-width: 240px;
+}
+
+.alert-title {
+  font-size: 1rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.alert-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.alert-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.btn-sm {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.86rem;
+}
+
+/* بطاقة النموذج الرئيسية */
+.patient-form-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-top-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.info-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.required-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.required-star {
+  color: #dc2626;
+  font-weight: 800;
+  margin-right: 0.2rem;
+}
+
+.optional-tag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: normal;
+  margin-right: 0.35rem;
+}
+
+/* شبكة الحقول المتجاوبة: عمودان على الكمبيوتر، عمود واحد على الهاتف */
+.patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.patient-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.35rem 1.5rem;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field-span-full {
+  grid-column: span 2;
+}
+
+.field-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+}
+
+.field-input,
+.field-select,
+.field-textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.field-input:focus,
+.field-select:focus,
+.field-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.field-input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12) !important;
+}
+
+.field-error-msg {
+  font-size: 0.82rem;
+  color: #dc2626;
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+
+.field-hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* أزرار الإجراءات السفلية */
+.patient-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.5rem;
+}
+
+.btn-form-cancel {
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-form-cancel:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.btn-form-save {
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 700;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.85rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.25);
+}
+
+.btn-form-save:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.35);
+}
+
+.btn-form-save:disabled,
+.btn-form-cancel:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* شريط تحكم قسم المرضى */
+.patients-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.15rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  margin-top: 0.5rem;
+}
+
+.patients-control-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* التجاوب مع شاشات الهواتف (Responsive Mobile View) */
+@media (max-width: 768px) {
+  .patient-form-card {
+    padding: 1.25rem 1.15rem;
+  }
+
+  .patient-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .field-span-full {
+    grid-column: span 1;
+  }
+
+  .patient-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patient-back-btn {
+    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .patient-form-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .btn-form-cancel,
+  .btn-form-save {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .patients-control-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .patients-control-bar button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================================
+   8. تنسيقات صفحة ملف المريض (Patient Profile Page Styles)
+   وشريط البحث وتصفية المرضى
+   ============================================================================ */
+
+.patient-profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.patient-avatar-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid rgba(15, 118, 110, 0.15);
+}
+
+.patient-avatar-letter {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.file-code-badge {
+  font-size: 0.82rem;
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.profile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* شبكة تفاصيل ملف المريض */
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.profile-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-card-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.85rem;
+}
+
+.profile-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.profile-fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.profile-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-field-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.profile-field-value {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.blood-type-badge {
+  display: inline-block;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-weight: 800;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  border: 1px solid #fca5a5;
+}
+
+.profile-notes-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+}
+
+.profile-alert-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.profile-alert-box--warning {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.profile-notes-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* شريط البحث وتصفية المرضى */
+.patients-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.patients-search-input {
+  min-width: 240px;
+}
+
+/* شاشات الهواتف لملف المريض */
+@media (max-width: 768px) {
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .profile-header-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .patients-filter-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .patients-search-input {
+    width: 100%;
+  }
+
+  .summary-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-actions-bar {
+    width: 100%;
+  }
+
+  .summary-actions-bar button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .patient-tabs-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-modal-window {
+    padding: 1.25rem;
+  }
+}
+
+/* ============================================================================
+   9. بطاقة ملخص المريض العلوية والتبويبات الأربعة (Patient Summary & Tabs)
+   ============================================================================ */
+
+.patient-summary-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.summary-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1.15rem;
+}
+
+.summary-identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.summary-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 1.65rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(15, 118, 110, 0.2);
+  flex-shrink: 0;
+}
+
+.summary-name-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.summary-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.summary-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.summary-meta-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.summary-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* شبكة عناصر بطاقة الملخص */
+.summary-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+.summary-stat-box {
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.summary-stat-box:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.summary-stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.summary-stat-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* تنبيه الحساسية والأمراض المزمنة */
+.allergy-alert-banner {
+  border-radius: 12px;
+  padding: 0.95rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.allergy-alert-banner--warning {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.allergy-alert-banner--calm {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* شريط التبويبات الأربعة */
+.patient-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f1f5f9;
+  padding: 0.4rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+.patient-tab-button {
+  font-family: inherit;
+  font-size: 0.94rem;
+  font-weight: 700;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.patient-tab-button:hover {
+  color: var(--primary-dark);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.patient-tab-button--active {
+  background-color: #ffffff;
+  color: var(--primary-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.patient-tab-counter {
+  font-size: 0.78rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background-color: #e2e8f0;
+  color: var(--text-main);
+}
+
+.patient-tab-button--active .patient-tab-counter {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* بطاقة محتوى التبويب */
+.patient-tab-pane {
+  animation: fadeInPane 0.2s ease-out;
+}
+
+@keyframes fadeInPane {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* شريط تنبيه القراءة فقط في الفواتير */
+.readonly-info-ribbon {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  padding: 0.75rem 1.15rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+/* شارات حالات المواعيد والفواتير */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-pill--confirmed {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.status-pill--pending {
+  background-color: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.status-pill--completed {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.status-pill--cancelled {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.status-pill--paid {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.status-pill--unpaid {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.status-pill--overdue {
+  background-color: #fdf2f8;
+  color: #9d174d;
+  border: 1px solid #fbcfe8;
+}
+
+/* نوافذ الحوار المنبثقة (Modals) */
+.profile-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 1000;
+  animation: fadeInOverlay 0.2s ease-out;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.profile-modal-window {
+  background-color: #ffffff;
+  border-radius: 18px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: modalSlideUp 0.25s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(16px) scale(0.97); }
+  to { transform: translateY(0) scale(1); }
+}
+
+.profile-modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.profile-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.profile-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================================
+   تنسيقات واجهة عمل السكرتيرة (Secretary Workspace)
+   ============================================================================ */
+
+.secretary-page-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* 1. القائمة الجانبية للسكرتيرة */
+.secretary-sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.secretary-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.secretary-sidebar__avatar {
+  font-size: 1.75rem;
+  width: 46px;
+  height: 46px;
+  background-color: var(--primary-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.secretary-sidebar__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.secretary-sidebar__role-tag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.secretary-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.secretary-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.secretary-nav-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: right;
+}
+
+.secretary-nav-link:hover {
+  background-color: #f1f5f9;
+}
+
+.secretary-nav-link--active {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: rgba(15, 118, 110, 0.2);
+}
+
+.secretary-nav-icon {
+  font-size: 1.1rem;
+  margin-left: 0.25rem;
+}
+
+.secretary-badge-live {
+  font-size: 0.7rem;
+  background-color: #10b981;
+  color: #ffffff;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.secretary-count-pill {
+  font-size: 0.75rem;
+  background-color: #e2e8f0;
+  color: #475569;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* ودجت ملخص صالة الانتظار في القائمة الجانبية */
+.secretary-sidebar__widget {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.secretary-widget-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #92400e;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.secretary-widget-body {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.secretary-widget-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #b45309;
+}
+
+.secretary-widget-label {
+  font-size: 0.8rem;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.secretary-widget-btn {
+  background: transparent;
+  border: none;
+  color: #b45309;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: right;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.secretary-widget-btn:hover {
+  color: #78350f;
+  text-decoration: underline;
+}
+
+.secretary-sidebar__footer {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.secretary-switch-dashboard-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  border: 1px dashed var(--border-color);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secretary-switch-dashboard-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: var(--primary);
+}
+
+/* 2. منطقة المحتوى الرئيسية */
+.secretary-main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ترويسة واجهة السكرتيرة */
+.secretary-header-banner {
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.15);
+}
+
+.secretary-header-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.secretary-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.secretary-workspace-tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.secretary-header-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.secretary-header-desc {
+  font-size: 0.92rem;
+  opacity: 0.92;
+}
+
+/* الأزرار السريعة الثلاثة في الترويسة */
+.secretary-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.secretary-btn-primary {
+  background-color: #ffffff !important;
+  color: #0f766e !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.secretary-btn-primary:hover {
+  background-color: #f0fdf4 !important;
+  transform: translateY(-1px);
+}
+
+.secretary-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  font-weight: 700 !important;
+}
+
+.secretary-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.secretary-btn-refresh {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 0.55rem 0.65rem !important;
+}
+
+/* 3. شبكة كروت الإحصائيات الأربعة للسكرتيرة */
+.secretary-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.secretary-stat-card {
+  background-color: var(--bg-card);
+  border-radius: 14px;
+  padding: 1.15rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.secretary-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.secretary-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+}
+
+.secretary-stat-card--teal::before {
+  background: linear-gradient(90deg, #0d9488, #14b8a6);
+}
+
+.secretary-stat-card--amber::before {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+
+.secretary-stat-card--rose::before {
+  background: linear-gradient(90deg, #e11d48, #f43f5e);
+}
+
+.secretary-stat-card--emerald::before {
+  background: linear-gradient(90deg, #059669, #10b981);
+}
+
+.secretary-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.secretary-stat-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.secretary-stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secretary-stat-icon--teal {
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+
+.secretary-stat-icon--amber {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.secretary-stat-icon--rose {
+  background-color: #ffe4e6;
+  color: #e11d48;
+}
+
+.secretary-stat-icon--emerald {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.secretary-stat-value {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.secretary-stat-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* 4. لوحة جدول المواعيد القادمة */
+.secretary-table-panel {
+  padding: 1.5rem;
+}
+
+.secretary-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.secretary-table-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.secretary-tabs-group {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  padding: 0.25rem;
+  gap: 0.2rem;
+}
+
+.secretary-filter-tab {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.secretary-filter-tab.active {
+  background-color: #ffffff;
+  color: var(--primary-dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.secretary-search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.secretary-search-icon {
+  position: absolute;
+  right: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.secretary-search-input {
+  padding: 0.45rem 2.2rem 0.45rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  width: 220px;
+  transition: border-color 0.2s, width 0.2s;
+}
+
+.secretary-search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  width: 250px;
+}
+
+/* عناصر الجدول */
+.secretary-doctor-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.secretary-visit-pill {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+.secretary-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.secretary-action-btn {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.secretary-action-btn--waiting {
+  background-color: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.secretary-action-btn--waiting:hover {
+  background-color: #fde68a;
+}
+
+.secretary-action-btn--complete {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border-color: #bfdbfe;
+}
+
+.secretary-action-btn--complete:hover {
+  background-color: #dbeafe;
+}
+
+.secretary-action-btn--cancel {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.secretary-action-btn--cancel:hover {
+  background-color: #fee2e2;
+}
+
+/* شاشات الفراغ والتحميل */
+.secretary-loading-box,
+.secretary-error-box,
+.secretary-empty-box {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.secretary-empty-box svg,
+.secretary-error-box svg {
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.secretary-error-notice {
+  grid-column: 1 / -1;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* بطاقة نتائج البحث عن مريض */
+.secretary-patient-search-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  background-color: #ffffff;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.secretary-patient-search-card:hover {
+  border-color: var(--primary);
+  background-color: #f8fafc;
+}
+
+.patient-search-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.patient-search-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-search-name {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  display: block;
+}
+
+.patient-search-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.patient-search-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* زر التبديل في الشريط العلوي */
+.role-switch-link {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: var(--text-main);
+}
+
+.role-switch-link:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.role-switch-link.active-secretary {
+  background-color: #0f766e;
+  color: #ffffff;
+  border-color: #0f766e;
+}
+
+/* التجاوب مع شاشات التابلت والموبايل (Responsive Media Queries) */
+@media (max-width: 992px) {
+  .secretary-page-layout {
+    flex-direction: column;
+  }
+
+  .secretary-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .secretary-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .secretary-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .secretary-header-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .secretary-quick-actions {
+    width: 100%;
+  }
+
+  .secretary-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .secretary-table-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secretary-tabs-group {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .secretary-search-input {
+    width: 100%;
+  }
+
+  .secretary-patient-search-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .patient-search-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* ==========================================================================
+   نموذج حجز موعد جديد (AppointmentBookingModal)
+   ========================================================================== */
+.appointment-booking-modal-container {
+  max-width: 680px;
+  width: 100%;
+}
+
+.appointment-booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* تخطيط شبكي متجاوب: عمودين على الشاشات الكبيرة وعمود على الشاشات الصغيرة */
+.appointment-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* بطاقة المريض المختار */
+.selected-patient-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+}
+
+.selected-patient-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.patient-avatar-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0d9488;
+  flex-shrink: 0;
+}
+
+.selected-patient-name {
+  font-size: 0.98rem;
+  color: #134e4a;
+  font-weight: 700;
+  display: block;
+}
+
+.selected-patient-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #0f766e;
+  margin-top: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.locked-patient-tag {
+  background-color: #ccfbf1;
+  color: #0f766e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.btn-change-patient {
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  background-color: #ffffff;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-change-patient:hover {
+  background-color: #ccfbf1;
+  color: #134e4a;
+}
+
+/* محدد وبحث المرضى في واجهة السكرتيرة */
+.patient-picker-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.patient-picker-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.patient-picker-search-icon {
+  position: absolute;
+  right: 0.85rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.patient-picker-search-input {
+  padding-right: 2.5rem !important;
+  width: 100%;
+}
+
+.patient-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 120;
+  padding: 0.35rem;
+}
+
+.patient-picker-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: right;
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.patient-picker-item:hover,
+.patient-picker-item--active {
+  background-color: #f1f5f9;
+}
+
+.patient-picker-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+
+.patient-picker-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex-grow: 1;
+}
+
+.patient-picker-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.patient-picker-phone {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.patient-picker-check {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.patient-picker-empty {
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+/* صندوق تنبيه الوقت أو التاريخ الماضي */
+.time-past-warning-box {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #b45309;
+}
+
+.time-past-warning-text {
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* التجاوب مع شاشات الجوال */
+@media (max-width: 640px) {
+  .appointment-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .selected-patient-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-change-patient {
+    align-self: flex-end;
+  }
+}
+
+/* ==========================================================================
+   تطوير جدول العمل اليومي للسكرتيرة (Secretary Daily Work Schedule)
+   ========================================================================== */
+.secretary-action-btn--confirm {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.secretary-action-btn--confirm:hover {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.secretary-action-btn--reschedule {
+  background-color: #f0f9ff;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.secretary-action-btn--reschedule:hover {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.status-pill--scheduled {
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+/* فلاتر القوائم المنسدلة الإضافية في واجهة السكرتيرة */
+.secretary-filters-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.secretary-dropdowns-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.secretary-filter-select {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.secretary-filter-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+/* بطاقات الموبايل للمواعيد (Mobile Cards Layout) */
+.secretary-mobile-cards {
+  display: none;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+}
+
+.secretary-mobile-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.secretary-mobile-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.mobile-card-patient-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.mobile-card-patient-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.mobile-card-phone {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.mobile-card-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  background-color: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-size: 0.84rem;
+}
+
+.mobile-card-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.mobile-card-detail-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.mobile-card-detail-value {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.mobile-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.mobile-card-actions .secretary-action-btn,
+.mobile-card-actions .btn-action-view {
+  flex: 1 1 auto;
+  text-align: center;
+  justify-content: center;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.82rem;
+}
+
+/* نوافذ التأكيد وإعادة الجدولة */
+.confirm-modal-box {
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.confirm-modal-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #fef2f2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-modal-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.confirm-modal-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+.confirm-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-danger-confirm {
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-danger-confirm:hover {
+  background-color: #b91c1c;
+}
+
+/* تجاوب الجداول على شاشات الجوال */
+@media (max-width: 768px) {
+  .secretary-desktop-table {
+    display: none !important;
+  }
+
+  .secretary-mobile-cards {
+    display: flex !important;
+  }
+
+  .secretary-filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secretary-dropdowns-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secretary-filter-select {
+    width: 100%;
+  }
+
+  .secretary-search-input-wrap {
+    width: 100%;
+  }
+
+  .secretary-search-input {
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   رحلة الفاتورة وتسجيل المدفوعات والمعاينة والطباعة (Invoicing & Payments)
+   ========================================================================== */
+.secretary-action-btn--invoice {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+  border-color: #ddd6fe;
+}
+
+.secretary-action-btn--invoice:hover {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.secretary-action-btn--pay {
+  background-color: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.secretary-action-btn--pay:hover {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.secretary-invoice-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secretary-invoice-badge:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.invoice-summary-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.invoice-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.invoice-summary-label {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.invoice-summary-val {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.invoice-remaining-highlight {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: #b91c1c;
+  font-weight: 800;
+}
+
+.invoice-paid-highlight {
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: #047857;
+  font-weight: 800;
+}
+
+.btn-quick-full-pay {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px dashed #86efac;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-quick-full-pay:hover {
+  background-color: #dcfce7;
+  border-color: #4ade80;
+}
+
+.payment-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.payment-history-table th {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.45rem 0.65rem;
+  text-align: right;
+  font-weight: 700;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.payment-history-table td {
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+/* ورقة الفاتورة المطبوعة (Printable Invoice Paper) */
+.printable-invoice-paper {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  font-family: inherit;
+  color: #0f172a;
+}
+
+.invoice-paper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #0f766e;
+  margin-bottom: 1.25rem;
+}
+
+.invoice-paper-logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0f766e;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.invoice-paper-meta {
+  text-align: left;
+  font-size: 0.85rem;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.invoice-patient-card-paper {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 0.85rem 1.15rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.88rem;
+}
+
+.invoice-paper-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+}
+
+.invoice-paper-items-table th {
+  background-color: #0f766e;
+  color: #ffffff;
+  padding: 0.6rem 0.85rem;
+  text-align: right;
+  font-size: 0.88rem;
+}
+
+.invoice-paper-items-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.invoice-paper-summary-box {
+  margin-right: auto;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.invoice-paper-footer-notice {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #cbd5e1;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* وضع الطباعة عند الضغط على زر طباعة */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .printable-invoice-paper,
+  .printable-invoice-paper * {
+    visibility: visible;
+  }
+
+  .printable-invoice-paper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 1.5cm;
+    border: none;
+    box-shadow: none;
+  }
+
+  .modal-backdrop,
+  .modal-actions,
+  .modal-close-btn,
+  .secretary-sidebar,
+  .secretary-header-banner {
+    display: none !important;
+  }
+}
+
+/* ============================================================================
+   تنسيقات واجهة الطبيب اليومية (Doctor Daily Workspace Styles)
+   ============================================================================ */
+
+.doctor-page-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* 1. ترويسة وهوية الطبيب */
+.doctor-header-banner {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.doctor-header-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.doctor-avatar-box {
+  width: 52px;
+  height: 52px;
+  background-color: var(--primary-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.15);
+}
+
+.doctor-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-name-heading {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.3;
+}
+
+.doctor-specialty-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+}
+
+.doctor-id-badge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+
+.doctor-header-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.doctor-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.doctor-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.doctor-selector-wrap {
+  position: relative;
+}
+
+.doctor-selector-dropdown {
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background-color: #f0fdfa;
+  border: 1.5px solid #0f766e;
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.doctor-selector-dropdown:focus {
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.25);
+}
+
+/* زر واجهة الطبيب في القائمة العلوية */
+.role-switch-link.active-doctor {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* 2. شبكة المؤشرات الأربعة */
+.doctor-stats-section {
+  width: 100%;
+}
+
+.doctor-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.doctor-kpi-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.doctor-kpi-card--blue {
+  border-top: 4px solid #3b82f6;
+}
+
+.doctor-kpi-card--amber {
+  border-top: 4px solid #f59e0b;
+}
+
+.doctor-kpi-card--teal {
+  border-top: 4px solid #0f766e;
+}
+
+.doctor-kpi-card--emerald {
+  border-top: 4px solid #10b981;
+}
+
+.doctor-kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doctor-kpi-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.doctor-kpi-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-kpi-icon--blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.doctor-kpi-icon--amber {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.doctor-kpi-icon--teal {
+  background-color: #f0fdfa;
+  color: #0f766e;
+}
+
+.doctor-kpi-icon--emerald {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.doctor-kpi-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.doctor-kpi-value {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.doctor-kpi-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* 3. شريط البحث والفلاتر */
+.doctor-filter-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 0.85rem 1.15rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.doctor-filter-search-box {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-icon {
+  position: absolute;
+  right: 0.85rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.doctor-search-input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.55rem 2.5rem 0.55rem 1rem;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.doctor-search-input:focus {
+  background-color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+  outline: none;
+}
+
+.doctor-search-clear {
+  position: absolute;
+  left: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.doctor-status-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.doctor-tab-btn {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doctor-tab-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--text-main);
+}
+
+.doctor-tab-btn--active {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: rgba(15, 118, 110, 0.3);
+}
+
+/* 4. لوحة جدول المواعيد */
+.doctor-table-panel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.doctor-data-table {
+  width: 100%;
+}
+
+.doctor-row--active-exam {
+  background-color: #f0fdf4 !important;
+}
+
+.patient-cell-with-bio {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.patient-name-text {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: block;
+}
+
+.patient-meta-sub {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.patient-id-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+}
+
+.allergy-mini-warning {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+.time-cell-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+  background-color: #f8fafc;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.visit-type-pill {
+  font-size: 0.82rem;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.doctor-table-notes {
+  max-width: 200px;
+  font-size: 0.85rem;
+  color: #475569;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* شارات الفاتورة للقراءة فقط */
+.invoice-readonly-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.invoice-readonly-badge--paid {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.invoice-readonly-badge--unpaid {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.invoice-readonly-badge--partial {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.invoice-readonly-badge--overdue {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.invoice-readonly-badge--none {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* شارة حالة "جاري الكشف" مع نبضة حية */
+.status-pill--in-progress {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #6ee7b7;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.live-status-dot-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulseGreen 1.5s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* أزرار الإجراء السريري للطبيب */
+.doctor-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-doctor-start-exam {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(15, 118, 110, 0.2);
+}
+
+.btn-doctor-start-exam:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-doctor-complete-exam {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(16, 185, 129, 0.2);
+}
+
+.btn-doctor-complete-exam:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+.badge-exam-done {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #059669;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+}
+
+/* 5. بطاقات الموبايل للطبيب */
+.doctor-mobile-cards {
+  display: none;
+}
+
+.doctor-mobile-card {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1rem;
+  background: var(--bg-card);
+  margin-bottom: 0.85rem;
+}
+
+.doctor-card--active-exam {
+  border: 2px solid #10b981;
+  background-color: #f0fdf4;
+}
+
+.mobile-allergy-alert {
+  margin-top: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #b91c1c;
+  background-color: #fef2f2;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+}
+
+.mobile-doctor-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 6. نافذة استعراض السجل الطبي السريع */
+.medical-bio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.bio-field-card {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bio-field-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.bio-field-value {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.clinical-alert-box {
+  background-color: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.clinical-alert-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #be123c;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.clinical-alert-text {
+  font-size: 0.88rem;
+  color: #9f1239;
+  line-height: 1.5;
+}
+
+.alert-box-allergy {
+  background-color: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #be123c;
+  font-size: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+/* التجاوب مع شاشات التابلت والموبايل */
+@media (max-width: 992px) {
+  .doctor-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-header-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctor-header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .doctor-selector-wrap {
+    flex: 1;
+  }
+
+  .doctor-selector-dropdown {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-responsive-desktop {
+    display: none;
+  }
+
+  .doctor-mobile-cards {
+    display: block;
+  }
+
+  .doctor-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doctor-status-tabs {
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    flex-wrap: nowrap;
+  }
+
+  .medical-bio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   شاشة «بدء الكشف» السريري للطبيب (Doctor Examination Screen Styles)
+   ========================================================================== */
+
+.btn-doctor-resume-exam {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background-color: #0f766e;
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2);
+}
+
+.btn-doctor-resume-exam:hover {
+  background-color: #115e59;
+  transform: translateY(-1px);
+}
+
+.doctor-exam-screen-container {
+  padding: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* شريط ترويسة شاشة الكشف */
+.doctor-exam-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 1rem;
+  z-index: 40;
+}
+
+.doctor-exam-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.doctor-exam-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-exam-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-exam-back:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.doctor-exam-header-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.doctor-exam-screen-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.doctor-exam-screen-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* أزرار الإجراءات */
+.btn-exam-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-exam-action:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-exam-action--draft {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+.btn-exam-action--draft:hover:not(:disabled) {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-exam-action--complete {
+  background-color: var(--primary);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.25);
+}
+
+.btn-exam-action--complete:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-icon-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* بطاقة ملخص المريض السريعة */
+.patient-brief-summary-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.patient-brief-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.patient-brief-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.patient-brief-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.patient-brief-id-badge {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #bfdbfe;
+}
+
+.patient-brief-visit-badge {
+  background-color: #f0fdf4;
+  color: #166534;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #bbf7d0;
+}
+
+.patient-brief-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.patient-brief-meta-item {
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  padding: 0.65rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.meta-value--danger {
+  color: #dc2626;
+}
+
+/* شريط تنبيه الحساسية والأمراض المزمنة */
+.patient-brief-allergy-alert {
+  margin-top: 1rem;
+  background-color: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #9f1239;
+}
+
+.patient-brief-allergy-alert--safe {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.patient-brief-allergy-icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.patient-brief-allergy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.patient-brief-allergy-title {
+  font-size: 0.88rem;
+}
+
+.patient-brief-allergy-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* بطاقة الزيارة السابقة */
+.patient-brief-previous-visit-box {
+  margin-top: 1rem;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.patient-brief-prev-title {
+  font-size: 0.88rem;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.patient-brief-prev-meta {
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.patient-brief-prev-notes {
+  font-size: 0.88rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* شبكة أقسام الفحص السريري التسعة */
+.exam-clinical-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.exam-section-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s ease;
+}
+
+.exam-section-card:hover {
+  border-color: #cbd5e1;
+}
+
+.exam-section-card--span2 {
+  grid-column: span 2;
+}
+
+.exam-section-card--highlight {
+  border-color: #93c5fd;
+  background-color: #fafcff;
+}
+
+.exam-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.exam-section-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exam-section-icon-badge--blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.exam-section-icon-badge--teal {
+  background-color: #f0fdfa;
+  color: #0f766e;
+}
+
+.exam-section-icon-badge--amber {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.exam-section-icon-badge--purple {
+  background-color: #faf5ff;
+  color: #7c3aed;
+}
+
+.exam-section-icon-badge--emerald {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.exam-section-icon-badge--indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.exam-section-icon-badge--slate {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.exam-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+}
+
+.exam-section-optional-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  background-color: #f1f5f9;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+.exam-section-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0 0;
+}
+
+.exam-section-body {
+  width: 100%;
+}
+
+/* حقول الإدخال السريرية */
+.clinical-textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.75rem 0.95rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-main);
+  background-color: #ffffff;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.clinical-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.clinical-textarea--diagnosis {
+  font-weight: 700;
+  color: #1e3a8a;
+  background-color: #f8faff;
+}
+
+.clinical-textarea--plan {
+  background-color: #fbfdff;
+}
+
+.clinical-textarea--complaint {
+  font-weight: 600;
+}
+
+/* شبكة حقول العلامات الحيوية */
+.vitals-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 0.85rem;
+}
+
+.vital-input-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vital-input-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.vital-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.vital-input-field {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.vital-input-field:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15);
+}
+
+.vital-input-unit {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* خيارات المتابعة */
+.followup-controls-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.followup-timeframe-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn-followup-pill {
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  color: #334155;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-followup-pill:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.btn-followup-pill--active {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2);
+}
+
+.followup-custom-date-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+}
+
+.followup-date-label {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.followup-date-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+}
+
+/* شريط الإجراءات السفلي للشاشة */
+.doctor-exam-footer-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.1rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-top: 0.5rem;
+}
+
+.doctor-exam-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.doctor-exam-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.exam-footer-hint {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* استجابة شاشة الكشف للموبايل والتابلت */
+@media (max-width: 992px) {
+  .exam-clinical-sections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-section-card--span2 {
+    grid-column: span 1;
+  }
+
+  .patient-brief-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-exam-screen-container {
+    padding: 0.85rem;
+  }
+
+  .doctor-exam-header-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    position: static;
+  }
+
+  .doctor-exam-header-right {
+    justify-content: space-between;
+  }
+
+  .doctor-exam-header-left {
+    justify-content: stretch;
+  }
+
+  .doctor-exam-header-left .btn-exam-action {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .patient-brief-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .patient-brief-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vitals-inputs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-exam-footer-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .doctor-exam-footer-left {
+    flex-direction: column;
+  }
+
+  .doctor-exam-footer-left .btn-exam-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   تنسيقات قسم الروشتة الطبية الإلكترونية ومعاينة الطباعة العربية
+   ========================================================================== */
+
+.exam-section-card--prescription {
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+}
+
+.btn-print-rx-preview {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-print-rx-preview:hover {
+  background-color: #dcfce7;
+  border-color: #86efac;
+  transform: translateY(-1px);
+}
+
+.rx-medications-container {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.rx-medications-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rx-medications-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.rx-items-count {
+  font-size: 0.78rem;
+  padding: 0.15rem 0.55rem;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn-add-medication {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #0d9488;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-medication:hover {
+  background-color: #0f766e;
+  transform: translateY(-1px);
+}
+
+.rx-empty-state {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+}
+
+.rx-empty-text {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.rx-empty-btn {
+  background-color: #f1f5f9;
+  color: #0f766e;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rx-empty-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.rx-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rx-item-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease;
+}
+
+.rx-item-card:hover {
+  border-color: #94a3b8;
+}
+
+.rx-item-index {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0d9488;
+  background-color: #ccfbf1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+}
+
+.rx-item-fields-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.rx-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rx-field-group--name {
+  grid-column: span 2;
+}
+
+.rx-field-group--instructions {
+  grid-column: span 2;
+}
+
+.rx-field-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.rx-input {
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.rx-input:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15);
+}
+
+.rx-input--bold {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.btn-remove-medication {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.65rem;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.25rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-remove-medication:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+}
+
+/* ==========================================================================
+   نافذة معاينة وطباعة الروشتة الطبية (Prescription Print Modal)
+   ========================================================================== */
+
+.rx-print-modal-container {
+  max-width: 820px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+}
+
+.rx-print-modal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ورقة الروشتة المطبوعة */
+.prescription-printable-paper {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  position: relative;
+  font-family: inherit;
+}
+
+.rx-paper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.rx-clinic-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.rx-clinic-logo {
+  font-size: 2.25rem;
+  background-color: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rx-clinic-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.2rem 0;
+}
+
+.rx-clinic-sub {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 0.15rem 0;
+}
+
+.rx-clinic-contact {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.rx-doctor-brand {
+  text-align: left;
+}
+
+.rx-doctor-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f766e;
+  margin: 0 0 0.2rem 0;
+}
+
+.rx-doctor-spec {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0 0 0.15rem 0;
+}
+
+.rx-doctor-reg {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.rx-paper-divider {
+  height: 3px;
+  background: linear-gradient(to right, #0d9488, #3b82f6, #0d9488);
+  border-radius: 2px;
+  margin: 1.25rem 0;
+}
+
+.rx-patient-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rx-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.86rem;
+}
+
+.rx-meta-label {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.rx-meta-value {
+  color: #0f172a;
+}
+
+.rx-paper-body {
+  position: relative;
+  min-height: 280px;
+  padding: 0.5rem 0;
+}
+
+.rx-symbol {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.75rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #0d9488;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.rx-paper-empty {
+  text-align: center;
+  padding: 2.5rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+}
+
+.rx-paper-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+}
+
+.rx-paper-table th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  text-align: right;
+}
+
+.rx-paper-table td {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.88rem;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.rx-med-name {
+  font-size: 0.94rem;
+  color: #0f172a;
+}
+
+.rx-med-strength {
+  color: #0d9488;
+  font-weight: 700;
+}
+
+.rx-med-instructions {
+  color: #475569;
+  font-size: 0.84rem;
+}
+
+.rx-paper-notes-box {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.rx-paper-followup-box {
+  padding: 0.5rem 0.75rem;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #1d4ed8;
+  margin-bottom: 1rem;
+}
+
+.rx-paper-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rx-paper-footer-notice {
+  font-size: 0.8rem;
+  color: #64748b;
+  max-width: 380px;
+}
+
+.rx-paper-signature-box {
+  text-align: left;
+}
+
+.rx-signature-line {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.rx-signature-dots {
+  letter-spacing: 2px;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   قواعد وسائط الطباعة (@media print) المخصصة للروشتة
+   ========================================================================== */
+
+@media print {
+  /* إخفاء واجهات التطبيق وأشرطة التمرير والنافذة الخلفية */
+  body {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .prescription-printable-paper,
+  .prescription-printable-paper * {
+    visibility: visible !important;
+  }
+
+  .rx-print-modal-toolbar,
+  .modal-close-btn,
+  .modal-backdrop {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .rx-print-modal-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .prescription-printable-paper {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5cm !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .rx-paper-table th {
+    background-color: #f1f5f9 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .rx-patient-meta-grid {
+    background-color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .rx-symbol {
+    color: #0d9488 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* ============================================================================
+   نظام المصادقة وتسجيل الدخول الموحد (Unified Auth & Role-Based UI)
+   ============================================================================ */
+
+/* شاشة التحميل الأولية لاسترجاع الجلسة (Auth Splash Screen) لمنع وميض الواجهة الخاطئة */
+.auth-splash-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+  padding: 1.5rem;
+  font-family: inherit;
+}
+
+.auth-splash-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+  border: 1px solid #ccfbf1;
+  padding: 2.5rem 2rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-splash-icon {
+  font-size: 3rem;
+  background-color: #ccfbf1;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.auth-splash-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f766e;
+  margin: 0;
+}
+
+.auth-splash-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3.5px solid #e2e8f0;
+  border-top-color: #0f766e;
+  border-radius: 50%;
+  animation: authSpin 0.8s linear infinite;
+  margin: 0.75rem 0;
+}
+
+.auth-splash-text {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+@keyframes authSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* حاوية صفحة تسجيل الدخول الموحدة */
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0fdfa 0%, #f1f5f9 50%, #e0f2fe 100%);
+  padding: 1.5rem;
+}
+
+.login-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e2e8f0;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-card-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.login-brand-icon {
+  font-size: 2.75rem;
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(15, 118, 110, 0.1);
+}
+
+.login-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0f766e;
+  margin: 0;
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* تنبيه الخطأ */
+.login-error-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.login-error-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* نموذج تسجيل الدخول */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.login-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1e293b;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #0d9488;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+.login-password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input--password {
+  padding-left: 2.75rem;
+}
+
+.btn-toggle-password {
+  position: absolute;
+  left: 0.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  font-size: 1.15rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-toggle-password:hover {
+  background-color: #e2e8f0;
+}
+
+.btn-login-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.25);
+  margin-top: 0.5rem;
+}
+
+.btn-login-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15, 118, 110, 0.35);
+  background: linear-gradient(135deg, #115e59 0%, #042f2e 100%);
+}
+
+.btn-login-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-submitting-state {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.login-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: authSpin 0.7s linear infinite;
+}
+
+/* دليل الأدوار والتوجيه المباشر */
+.login-roles-guide {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.login-roles-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.login-roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 520px) {
+  .login-roles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.login-roles-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #334155;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.login-roles-hint {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0f766e;
+  background-color: #f0fdfa;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccfbf1;
+}
+
+.login-role-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.login-role-card--clickable {
+  cursor: pointer;
+  text-align: right;
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-role-card--clickable:hover:not(:disabled) {
+  border-color: #0d9488;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.16);
+  transform: translateY(-2px);
+  background-color: #f0fdfa;
+}
+
+.login-role-card--clickable:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-role-card--clickable:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.login-role-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.login-role-action-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0f766e;
+  background-color: #ccfbf1;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.login-role-card--clickable:hover:not(:disabled) .login-role-action-pill {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+.login-role-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.login-role-badge--doctor {
+  background-color: #ccfbf1;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
+
+.login-role-badge--secretary {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+.login-role-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.header-role-badge--clickable {
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+  padding: 0.25rem 0.65rem;
+}
+
+.header-role-badge--clickable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  filter: brightness(0.96);
+}
+
+.header-role-badge--clickable:active {
+  transform: scale(0.98);
+}
+
+/* هوية المستخدم وزر تسجيل الخروج في الشريط العلوي (HeaderNav User Area) */
+.header-user-area {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-right: auto;
+  padding: 0.35rem 0.65rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.header-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: right;
+}
+
+.header-user-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-role-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.user-role-badge--doctor {
+  background-color: #ccfbf1;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
+
+.user-role-badge--secretary {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+.btn-header-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  background-color: #ffffff;
+  border: 1.5px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-header-logout:hover {
+  background-color: #fef2f2;
+  border-color: #f87171;
+  color: #991b1b;
+  transform: translateY(-1px);
+}
+
+.role-switch-link.active-doctor {
+  background-color: #0f766e !important;
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+.role-switch-link.active-secretary {
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+/* ============================================================================
+   شاشة غير مصرح بالوصول (Unauthorized Page - 403)
+   ============================================================================ */
+.unauthorized-page-container {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.unauthorized-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  border: 1px solid #fee2e2;
+  padding: 2.75rem 2.25rem;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.unauthorized-icon-badge {
+  font-size: 3.25rem;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.15);
+  border: 1px solid #fecaca;
+}
+
+.unauthorized-status-pill {
+  display: inline-block;
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.unauthorized-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.unauthorized-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.unauthorized-role-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #f8fafc;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.unauthorized-current-role-label {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.unauthorized-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.btn-unauthorized-return {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.2);
+  width: 100%;
+}
+
+.btn-unauthorized-return:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15, 118, 110, 0.3);
+  background: linear-gradient(135deg, #115e59 0%, #042f2e 100%);
+}
+
