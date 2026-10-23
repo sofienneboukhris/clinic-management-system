@@ -52,7 +52,7 @@ export function DoctorDailyView({
       />
     );
   }
-  // 1. هوية الطبيب الحالي وحالاته (افتراضياً: طبيب الباطنة العامة بمعرفه doc-internal)
+  // 1. هوية الطبيب الحالي وحالاته (افتراضياً: د. أحمد محمود - باطنة وجهاز هضمي بمعرفه doc-internal)
   const [selectedDoctorId, setSelectedDoctorId] = useState('doc-internal');
   const currentDoctor = useMemo(() => getDoctorById(selectedDoctorId), [selectedDoctorId]);
 

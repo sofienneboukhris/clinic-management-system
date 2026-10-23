@@ -46,6 +46,55 @@ body {
   padding: 0 1rem;
 }
 
+/* ============================================================================
+   توحيد اللون الأساسي للعناوين مع ضمان أعلى درجات التباين والوضوح
+   ============================================================================ */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.dashboard-panel__title,
+.patient-main-title,
+.doctor-exam-screen-title,
+.exam-section-title,
+.doctor-header-title,
+.login-title,
+.unauthorized-title,
+.modal-title,
+.profile-modal-title,
+.confirm-modal-title,
+.state-feedback-title {
+  color: var(--primary-dark);
+}
+
+/* استثناء العناوين والنصوص داخل الحاويات ذات الخلفيات الداكنة لضمان وضوح النص والتباين */
+.welcome-banner h1,
+.welcome-banner h2,
+.welcome-banner h3,
+.welcome-banner h4,
+.welcome-banner h5,
+.welcome-banner h6,
+.welcome-banner .banner-heading,
+.welcome-banner .banner-description,
+.secretary-header h1,
+.secretary-header h2,
+.secretary-header .secretary-header-title,
+.secretary-header .secretary-header-desc,
+.auth-splash-title,
+.auth-splash-text,
+.btn-action-primary,
+.btn-submit,
+.btn-form-save,
+.btn-login-submit,
+.btn-exam-action--complete,
+.btn-doctor-start-exam {
+  color: #ffffff !important;
+}
+
+.text-primary,
+.text-teal-800 {
+  color: var(--primary-dark) !important;
+  font-weight: 700;
+}
+
 .app-layout {
   min-height: 100vh;
   display: flex;
@@ -67,9 +116,9 @@ body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 76px;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
@@ -77,6 +126,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .brand-icon {
@@ -119,12 +169,18 @@ body {
   color: var(--text-muted);
 }
 
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 /* قائمة التنقل في الديسكتوب */
 .nav-list {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-align: right;
 }
 
 .nav-link {
@@ -143,8 +199,9 @@ body {
   transition: all 0.2s ease;
 }
 
-.nav-link:hover {
-  background-color: #f1f5f9;
+.nav-link:hover:not(.active) {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
 }
 
 .nav-link.active {
@@ -411,6 +468,8 @@ body {
   .header-inner {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+    justify-content: space-between;
+    gap: 0.75rem;
   }
 
   /* إظهار زر القائمة في الموبايل وتحويل القائمة إلى قائمة منسدلة واضحة */
@@ -1221,7 +1280,7 @@ body {
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 0 0 3px rgba(15, 43, 72, 0.15);
 }
 
 .form-row-2 {
@@ -1934,7 +1993,7 @@ body {
 .field-select:focus,
 .field-textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 0 0 3px rgba(15, 43, 72, 0.15);
 }
 
 .field-input-error {
@@ -2002,13 +2061,13 @@ body {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 2px 6px rgba(15, 43, 72, 0.25);
 }
 
 .btn-form-save:hover {
   background-color: var(--primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.35);
+  box-shadow: 0 4px 12px rgba(15, 43, 72, 0.35);
 }
 
 .btn-form-save:disabled,
@@ -2109,7 +2168,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 2px solid rgba(15, 118, 110, 0.15);
+  border: 2px solid rgba(8, 145, 178, 0.25);
 }
 
 .patient-avatar-letter {
@@ -2349,7 +2408,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(15, 118, 110, 0.2);
+  border: 2px solid rgba(8, 145, 178, 0.25);
   flex-shrink: 0;
 }
 
@@ -2745,7 +2804,7 @@ body {
 .secretary-nav-link--active {
   background-color: var(--primary-light);
   color: var(--primary-dark);
-  border-color: rgba(15, 118, 110, 0.2);
+  border-color: rgba(8, 145, 178, 0.25);
 }
 
 .secretary-nav-icon {
@@ -3678,7 +3737,7 @@ body {
 
 .secretary-filter-select:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+  box-shadow: 0 0 0 3px rgba(15, 43, 72, 0.15);
 }
 
 /* بطاقات الموبايل للمواعيد (Mobile Cards Layout) */
@@ -4161,7 +4220,7 @@ body {
   justify-content: center;
   font-size: 1.8rem;
   flex-shrink: 0;
-  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(8, 145, 178, 0.25);
 }
 
 .doctor-title-row {
@@ -4186,7 +4245,7 @@ body {
   color: var(--primary-dark);
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  border: 1px solid rgba(15, 118, 110, 0.2);
+  border: 1px solid rgba(8, 145, 178, 0.25);
 }
 
 .doctor-id-badge {
@@ -4402,7 +4461,7 @@ body {
 .doctor-search-input:focus {
   background-color: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 0 0 3px rgba(15, 43, 72, 0.15);
   outline: none;
 }
 
@@ -4446,7 +4505,7 @@ body {
 .doctor-tab-btn--active {
   background-color: var(--primary-light);
   color: var(--primary-dark);
-  border-color: rgba(15, 118, 110, 0.3);
+  border-color: rgba(8, 145, 178, 0.25);
 }
 
 /* 4. لوحة جدول المواعيد */
@@ -4632,7 +4691,7 @@ body {
   align-items: center;
   gap: 0.4rem;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 2px 5px rgba(15, 43, 72, 0.2);
 }
 
 .btn-doctor-start-exam:hover {
@@ -4971,7 +5030,7 @@ body {
   background-color: var(--primary);
   border: none;
   color: #ffffff;
-  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 2px 6px rgba(15, 43, 72, 0.25);
 }
 
 .btn-exam-action--complete:hover:not(:disabled) {
@@ -5270,7 +5329,7 @@ body {
 .clinical-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 0 0 3px rgba(15, 43, 72, 0.15);
 }
 
 .clinical-textarea--diagnosis {
@@ -5333,7 +5392,7 @@ body {
 .vital-input-field:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 0 0 2px rgba(15, 43, 72, 0.15);
 }
 
 .vital-input-unit {
@@ -5378,7 +5437,7 @@ body {
   background-color: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 2px 4px rgba(15, 43, 72, 0.2);
 }
 
 .followup-custom-date-box {
@@ -6482,7 +6541,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  margin-right: auto;
+  margin-inline-start: auto;
+  flex-shrink: 0;
   padding: 0.35rem 0.65rem;
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;

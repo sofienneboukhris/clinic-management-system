@@ -340,9 +340,9 @@ export function PatientProfilePage({
               className="btn-action-primary"
               aria-label="حجز موعد"
               style={{
-                backgroundColor: 'var(--secondary, #0891b2)',
+                backgroundColor: 'var(--primary, #0f2b48)',
                 color: '#ffffff',
-                borderColor: 'var(--secondary, #0891b2)',
+                borderColor: 'var(--primary, #0f2b48)',
               }}
             >
               <CalendarIcon size={16} />
@@ -600,8 +600,8 @@ export function PatientProfilePage({
                   className="btn-action-primary btn-sm"
                   title="حجز موعد جديد لهذا المريض"
                   style={{
-                    backgroundColor: 'var(--secondary, #0891b2)',
-                    borderColor: 'var(--secondary, #0891b2)',
+                    backgroundColor: 'var(--primary, #0f2b48)',
+                    borderColor: 'var(--primary, #0f2b48)',
                     color: '#fff',
                   }}
                 >
@@ -665,8 +665,8 @@ export function PatientProfilePage({
                     onClick={() => setIsBookingModalOpen(true)}
                     className="btn-action-primary btn-sm"
                     style={{
-                      backgroundColor: 'var(--secondary, #0891b2)',
-                      borderColor: 'var(--secondary, #0891b2)',
+                      backgroundColor: 'var(--primary, #0f2b48)',
+                      borderColor: 'var(--primary, #0f2b48)',
                       color: '#fff',
                     }}
                   >

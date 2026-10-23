@@ -1071,7 +1071,7 @@ export function DoctorExaminationScreen({
             <div className="rx-print-modal-toolbar">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ fontSize: '1.25rem' }}>🖨️</span>
-                <h3 id="rx-print-modal-title" style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0, color: '#0f172a' }}>
+                <h3 id="rx-print-modal-title" style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0, color: 'var(--primary-dark, #0a1c33)' }}>
                   معاينة وطباعة الروشتة الطبية الرسمية
                 </h3>
               </div>

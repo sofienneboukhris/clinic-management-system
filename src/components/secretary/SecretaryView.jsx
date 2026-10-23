@@ -1604,7 +1604,7 @@ export function SecretaryView({
                           <tr key={inv.id} className="data-table-row">
                             {/* رقم الفاتورة */}
                             <td>
-                              <span className="font-numeric font-semibold text-teal-800">
+                              <span className="font-numeric font-semibold text-primary">
                                 {inv.invoiceNumber}
                               </span>
                             </td>
@@ -1719,7 +1719,7 @@ export function SecretaryView({
                       <div key={`mob-inv-${inv.id}`} className="secretary-mobile-card">
                         <div className="mobile-card-top">
                           <div>
-                            <span className="font-numeric font-bold text-teal-800 block text-sm">
+                            <span className="font-numeric font-bold text-primary block text-sm">
                               {inv.invoiceNumber}
                             </span>
                             <strong className="mobile-card-patient-name">{inv.patientName}</strong>
@@ -2206,7 +2206,7 @@ export function SecretaryView({
                 </div>
                 <div className="invoice-summary-row">
                   <span className="invoice-summary-label">الطبيب المعالج:</span>
-                  <span className="invoice-summary-val text-teal-800">
+                  <span className="invoice-summary-val text-primary">
                     {invoiceModalTargetAppointment.doctorName || getDoctorById(invoiceModalTargetAppointment.doctorId)?.name || 'طبيب العيادة'}
                   </span>
                 </div>
@@ -2403,7 +2403,7 @@ export function SecretaryView({
               <div className="invoice-summary-card">
                 <div className="invoice-summary-row">
                   <span className="invoice-summary-label">رقم الفاتورة:</span>
-                  <span className="invoice-summary-val font-numeric text-teal-800">{selectedInvoiceForPayment.invoiceNumber}</span>
+                  <span className="invoice-summary-val font-numeric text-primary">{selectedInvoiceForPayment.invoiceNumber}</span>
                 </div>
                 <div className="invoice-summary-row">
                   <span className="invoice-summary-label">المريض:</span>
