@@ -1102,18 +1102,18 @@ export function DoctorExaminationScreen({
                 <div className="rx-clinic-brand">
                   <div className="rx-clinic-logo">🩺</div>
                   <div>
-                    <h2 className="rx-clinic-name">عيادة الرعاية الطبية التخصصية</h2>
-                    <p className="rx-clinic-sub">Specialized Medical Care Clinic</p>
-                    <p className="rx-clinic-contact">الخط الساخن: 01000000000 • القاهرة، مصر</p>
+                    <h2 className="rx-clinic-name">عيادة الشفاء التخصصية</h2>
+                    <p className="rx-clinic-sub">Al-Shifa Specialized Clinic</p>
+                    <p className="rx-clinic-contact">الخط الساخن: 01000000000 • العنوان: شارع المثال - القاهرة</p>
                   </div>
                 </div>
 
                 <div className="rx-doctor-brand">
                   <h3 className="rx-doctor-name">
-                    {appointment?.doctor_id ? (getDoctorById(appointment.doctor_id)?.name || 'طبيب العيادة المعالج') : 'طبيب العيادة المعالج'}
+                    {appointment?.doctor_id ? (getDoctorById(appointment.doctor_id)?.name || 'د. أحمد محمود') : 'د. أحمد محمود'}
                   </h3>
                   <p className="rx-doctor-spec">
-                    {appointment?.doctor_id ? (getDoctorById(appointment.doctor_id)?.specialty || 'استشاري الطب العام والباطنة') : 'استشاري الطب العام والباطنة'}
+                    {appointment?.doctor_id ? (getDoctorById(appointment.doctor_id)?.specialty || 'استشاري باطنة وجهاز هضمي') : 'استشاري باطنة وجهاز هضمي'}
                   </p>
                   <p className="rx-doctor-reg">ترخيص مزاولة مهنة: <span className="font-numeric">2026/894</span></p>
                 </div>
@@ -1158,7 +1158,7 @@ export function DoctorExaminationScreen({
                 {diagnosis && (
                   <div className="rx-meta-item rx-meta-item--diagnosis" style={{ gridColumn: 'span 3' }}>
                     <span className="rx-meta-label">التشخيص الطبي:</span>
-                    <strong className="rx-meta-value" style={{ color: '#0f766e' }}>{diagnosis}</strong>
+                    <strong className="rx-meta-value" style={{ color: 'var(--primary, #0f2b48)' }}>{diagnosis}</strong>
                   </div>
                 )}
               </div>

@@ -229,7 +229,7 @@ export function DashboardView({ onNavigateSection }) {
             <div className="dashboard-title-row">
               <h1 className="dashboard-main-heading">لوحة التحكم</h1>
             </div>
-            <p className="dashboard-sub-heading">نظرة سريعة على أداء العيادة اليوم</p>
+            <p className="dashboard-sub-heading">نظرة سريعة على أداء عيادة الشفاء التخصصية اليوم — د. أحمد محمود (باطنة وجهاز هضمي)</p>
             <div className="dashboard-date-tag">
               <CalendarIcon size={16} />
               <span className="font-numeric">{formattedToday}</span>
@@ -257,7 +257,7 @@ export function DashboardView({ onNavigateSection }) {
               متصل بقاعدة البيانات
             </span>
           </div>
-          <p className="dashboard-sub-heading">نظرة سريعة على أداء العيادة اليوم</p>
+          <p className="dashboard-sub-heading">نظرة سريعة على أداء عيادة الشفاء التخصصية اليوم — د. أحمد محمود (باطنة وجهاز هضمي)</p>
           <div className="dashboard-date-tag">
             <CalendarIcon size={16} />
             <span className="font-numeric">{formattedToday}</span>

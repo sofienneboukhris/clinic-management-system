@@ -312,9 +312,9 @@ function App() {
       <div className="auth-splash-container" dir="rtl">
         <div className="auth-splash-card">
           <div className="auth-splash-icon" aria-hidden="true">🏥</div>
-          <h2 className="auth-splash-title">عيادة الرعاية الطبية التخصصية</h2>
+          <h2 className="auth-splash-title">عيادة الشفاء التخصصية</h2>
           <div className="auth-splash-spinner" aria-hidden="true" />
-          <p className="auth-splash-text">جاري استرجاع جلسة العمل والتحقق من الصلاحيات...</p>
+          <p className="auth-splash-text">د. أحمد محمود (باطنة وجهاز هضمي) • جاري استرجاع جلسة العمل والتحقق من الصلاحيات...</p>
         </div>
       </div>
     );
@@ -433,7 +433,7 @@ function App() {
                 type="button"
                 onClick={() => setActiveSection(userRole === 'doctor' ? 'doctor' : 'secretary')}
                 className="btn-action-secondary"
-                style={{ alignSelf: 'center', backgroundColor: '#ffffff', color: '#0f766e', fontWeight: 800 }}
+                style={{ alignSelf: 'center', backgroundColor: '#ffffff', color: 'var(--primary, #0f2b48)', fontWeight: 800 }}
               >
                 العودة إلى واجهة العمل الرئيسية ←
               </button>
@@ -470,7 +470,7 @@ function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <span>
-            نظام إدارة العيادة الطبية — 2026
+            عيادة الشفاء التخصصية — د. أحمد محمود (باطنة وجهاز هضمي) • 2026
           </span>
           <span className="text-muted">
             جلسة العمل النشطة: {userRole === 'doctor' ? 'حساب الطبيب 🩺' : 'حساب السكرتيرة 👩‍💼'} — {currentUser.email}

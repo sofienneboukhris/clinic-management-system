@@ -52,7 +52,7 @@ export const CLINIC_SERVICES = [
  * سجل الأطباء ومقدمي الخدمة المعتمد بمعرفات ثابتة
  */
 export const CLINIC_DOCTORS = [
-  { id: 'doc-internal', name: 'د. عيادة الباطنة العامة', specialty: 'باطنة عامة' },
+  { id: 'doc-internal', name: 'د. أحمد محمود', specialty: 'باطنة وجهاز هضمي' },
   { id: 'doc-ortho', name: 'د. عيادة العظام والمفاصل', specialty: 'عظام ومفاصل' },
   { id: 'doc-cardio', name: 'د. استشاري القلب والأوعية', specialty: 'قلب وأوعية دموية' },
   { id: 'doc-pediatric', name: 'د. عيادة الأطفال وحديثي الولادة', specialty: 'أطفال' },
@@ -62,9 +62,9 @@ export const CLINIC_DOCTORS = [
 export function getDoctorById(doctorId) {
   return (
     CLINIC_DOCTORS.find((d) => d.id === doctorId) || {
-      id: doctorId || 'doc-general',
-      name: 'طبيب العيادة',
-      specialty: 'عام',
+      id: doctorId || 'doc-internal',
+      name: 'د. أحمد محمود',
+      specialty: 'باطنة وجهاز هضمي',
     }
   );
 }
@@ -302,12 +302,12 @@ function formatAppointmentsList(data, limit = 6) {
       else if (apt.notes.includes('جديد')) visitType = 'كشف جديد';
     }
 
-    let doctorName = 'طبيب العيادة';
+    let doctorName = 'د. أحمد محمود';
     if (apt.doctor_id) {
       const doc = getDoctorById(apt.doctor_id);
       if (doc) doctorName = doc.name;
     } else if (apt.notes) {
-      if (apt.notes.includes('باطنة')) doctorName = 'د. عيادة الباطنة العامة';
+      if (apt.notes.includes('باطنة')) doctorName = 'د. أحمد محمود';
       else if (apt.notes.includes('عظام')) doctorName = 'د. عيادة العظام والمفاصل';
       else if (apt.notes.includes('قلب')) doctorName = 'د. استشاري القلب والأوعية';
       else if (apt.notes.includes('أطفال')) doctorName = 'د. عيادة الأطفال';

@@ -7,14 +7,20 @@
 :root {
   --bg-page: #f4f7fb;
   --bg-card: #ffffff;
-  --primary: #0f766e;         /* لون أخضر طبي مريح للعين */
-  --primary-light: #ccfbf1;
-  --primary-dark: #115e59;
+  --primary: #0f2b48;         /* اللون الأساسي: كحلي داكن فخم ورسمي */
+  --primary-light: #e8f1f8;   /* كحلي ناعم مائل للثلجي للخلفيات الخفيفة */
+  --primary-dark: #0a1c33;    /* كحلي داكن عميق للعناوين وظلال التمرير */
+  --secondary: #0891b2;       /* اللون المساعد: تركواز مريح ومتناسق */
+  --secondary-light: #ecfeff; /* تركواز فاتح للخلفيات والوسوم */
+  --secondary-dark: #0e7490;  /* تركواز داكن للحالات النشطة */
+  --accent: #06b6d4;          /* تركواز مشرق */
+  --accent-light: #cffafe;    /* حدود وخلفيات تركواز ناعمة */
+  --teal-600: #0891b2;        /* دعم للتوافق مع التسميات السابقة بالتركواز */
   --text-main: #1e293b;
   --text-muted: #64748b;
   --border-color: #e2e8f0;
-  --highlight-border: #0d9488;
-  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
+  --highlight-border: #0891b2; /* حدود التمييز بالتركواز المساعد */
+  --shadow-sm: 0 2px 6px rgba(15, 43, 72, 0.07);
 }
 
 * {
@@ -75,7 +81,8 @@ body {
 
 .brand-icon {
   font-size: 2rem;
-  background-color: var(--primary-light);
+  background-color: var(--secondary-light);
+  border: 1px solid var(--accent-light);
   width: 48px;
   height: 48px;
   display: flex;
@@ -99,8 +106,9 @@ body {
 
 .version-badge {
   font-size: 0.75rem;
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+  border: 1px solid var(--accent-light);
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
   font-weight: 700;
@@ -171,7 +179,7 @@ body {
 }
 
 .welcome-banner {
-  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  background: linear-gradient(135deg, #0f2b48 0%, #16385e 100%);
   color: #ffffff;
   border-radius: 16px;
   padding: 1.5rem;
@@ -180,6 +188,7 @@ body {
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  box-shadow: 0 4px 14px rgba(15, 43, 72, 0.18);
 }
 
 .banner-text {
@@ -324,7 +333,7 @@ body {
 /* تمييز البطاقة عند اختيار القسم الخاص بها من القائمة العلوية */
 .card-highlighted {
   border: 2px solid var(--highlight-border);
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 4px 14px rgba(8, 145, 178, 0.18);
 }
 
 .demo-card-header {
@@ -553,13 +562,13 @@ body {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 2px 6px rgba(15, 43, 72, 0.2);
 }
 
 .btn-action-primary:hover {
   background-color: var(--primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.28);
+  box-shadow: 0 4px 10px rgba(15, 43, 72, 0.28);
 }
 
 .btn-action-secondary {
@@ -962,7 +971,7 @@ body {
 }
 
 .btn-action-view:hover {
-  background-color: #0d9488;
+  background-color: var(--secondary, #0891b2);
   color: #ffffff;
 }
 
@@ -1389,9 +1398,9 @@ body {
 }
 
 .state-feedback-card--empty .state-feedback-icon--empty {
-  background-color: #e2e8f0;
-  color: #0f766e;
-  border: 1px solid #cbd5e1;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary, #0891b2);
+  border: 1px solid var(--accent-light, #cffafe);
 }
 
 .state-feedback-card--empty .btn-action-primary {
@@ -2857,7 +2866,7 @@ body {
 
 /* ترويسة واجهة السكرتيرة */
 .secretary-header-banner {
-  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  background: linear-gradient(135deg, #0f2b48 0%, #16385e 100%);
   color: #ffffff;
   border-radius: 16px;
   padding: 1.5rem;
@@ -2866,7 +2875,7 @@ body {
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 4px 14px rgba(15, 43, 72, 0.2);
 }
 
 .secretary-header-info {
@@ -2911,14 +2920,14 @@ body {
 
 .secretary-btn-primary {
   background-color: #ffffff !important;
-  color: #0f766e !important;
+  color: var(--primary, #0f2b48) !important;
   font-weight: 800 !important;
   border: 1px solid rgba(255, 255, 255, 0.8) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .secretary-btn-primary:hover {
-  background-color: #f0fdf4 !important;
+  background-color: var(--secondary-light, #ecfeff) !important;
   transform: translateY(-1px);
 }
 
@@ -2976,7 +2985,7 @@ body {
 }
 
 .secretary-stat-card--teal::before {
-  background: linear-gradient(90deg, #0d9488, #14b8a6);
+  background: linear-gradient(90deg, #0891b2, #06b6d4);
 }
 
 .secretary-stat-card--amber::before {
@@ -3013,8 +3022,8 @@ body {
 }
 
 .secretary-stat-icon--teal {
-  background-color: #ccfbf1;
-  color: #0f766e;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary, #0891b2);
 }
 
 .secretary-stat-icon--amber {
@@ -3300,9 +3309,9 @@ body {
 }
 
 .role-switch-link.active-secretary {
-  background-color: #0f766e;
+  background-color: var(--secondary, #0891b2);
   color: #ffffff;
-  border-color: #0f766e;
+  border-color: var(--secondary, #0891b2);
 }
 
 /* التجاوب مع شاشات التابلت والموبايل (Responsive Media Queries) */
@@ -3398,8 +3407,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background-color: #f0fdfa;
-  border: 1px solid #99f6e4;
+  background-color: var(--secondary-light, #ecfeff);
+  border: 1px solid var(--accent-light, #cffafe);
   border-radius: 12px;
   padding: 0.85rem 1rem;
 }
@@ -3414,13 +3423,13 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #0d9488;
+  background-color: var(--secondary, #0891b2);
   flex-shrink: 0;
 }
 
 .selected-patient-name {
   font-size: 0.98rem;
-  color: #134e4a;
+  color: var(--primary, #0f2b48);
   font-weight: 700;
   display: block;
 }
@@ -3430,14 +3439,14 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.82rem;
-  color: #0f766e;
+  color: var(--secondary, #0891b2);
   margin-top: 0.2rem;
   flex-wrap: wrap;
 }
 
 .locked-patient-tag {
-  background-color: #ccfbf1;
-  color: #0f766e;
+  background-color: var(--accent-light, #cffafe);
+  color: var(--secondary-dark, #0e7490);
   padding: 0.15rem 0.5rem;
   border-radius: 6px;
   font-size: 0.75rem;
@@ -3450,8 +3459,8 @@ body {
   font-weight: 600;
   padding: 0.4rem 0.75rem;
   background-color: #ffffff;
-  color: #0f766e;
-  border: 1px solid #99f6e4;
+  color: var(--secondary, #0891b2);
+  border: 1px solid var(--accent-light, #cffafe);
   border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
@@ -3459,8 +3468,8 @@ body {
 }
 
 .btn-change-patient:hover {
-  background-color: #ccfbf1;
-  color: #134e4a;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary-dark, #0e7490);
 }
 
 /* محدد وبحث المرضى في واجهة السكرتيرة */
@@ -4006,14 +4015,14 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 1.25rem;
-  border-bottom: 2px solid #0f766e;
+  border-bottom: 2px solid var(--secondary, #0891b2);
   margin-bottom: 1.25rem;
 }
 
 .invoice-paper-logo {
   font-size: 1.4rem;
   font-weight: 900;
-  color: #0f766e;
+  color: var(--primary, #0f2b48);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -4046,7 +4055,7 @@ body {
 }
 
 .invoice-paper-items-table th {
-  background-color: #0f766e;
+  background-color: var(--primary, #0f2b48);
   color: #ffffff;
   padding: 0.6rem 0.85rem;
   text-align: right;
@@ -4223,8 +4232,8 @@ body {
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--primary-dark);
-  background-color: #f0fdfa;
-  border: 1.5px solid #0f766e;
+  background-color: var(--secondary-light, #ecfeff);
+  border: 1.5px solid var(--secondary, #0891b2);
   border-radius: 10px;
   padding: 0.45rem 0.85rem;
   cursor: pointer;
@@ -4233,7 +4242,7 @@ body {
 }
 
 .doctor-selector-dropdown:focus {
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.25);
 }
 
 /* زر واجهة الطبيب في القائمة العلوية */
@@ -4283,7 +4292,7 @@ body {
 }
 
 .doctor-kpi-card--teal {
-  border-top: 4px solid #0f766e;
+  border-top: 4px solid var(--secondary, #0891b2);
 }
 
 .doctor-kpi-card--emerald {
@@ -4322,8 +4331,8 @@ body {
 }
 
 .doctor-kpi-icon--teal {
-  background-color: #f0fdfa;
-  color: #0f766e;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary, #0891b2);
 }
 
 .doctor-kpi-icon--emerald {
@@ -4830,7 +4839,7 @@ body {
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 700;
-  background-color: #0f766e;
+  background-color: var(--primary, #0f2b48);
   color: #ffffff;
   border: none;
   padding: 0.45rem 0.85rem;
@@ -4840,11 +4849,11 @@ body {
   align-items: center;
   gap: 0.45rem;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 2px 4px rgba(15, 43, 72, 0.2);
 }
 
 .btn-doctor-resume-exam:hover {
-  background-color: #115e59;
+  background-color: var(--primary-dark, #0a1c33);
   transform: translateY(-1px);
 }
 
@@ -5120,7 +5129,7 @@ body {
 }
 
 .patient-brief-prev-meta {
-  color: #0f766e;
+  color: var(--secondary, #0891b2);
   font-weight: 700;
 }
 
@@ -5185,8 +5194,8 @@ body {
 }
 
 .exam-section-icon-badge--teal {
-  background-color: #f0fdfa;
-  color: #0f766e;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary, #0891b2);
 }
 
 .exam-section-icon-badge--amber {
@@ -5568,7 +5577,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background-color: #0d9488;
+  background-color: var(--secondary, #0891b2);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -5580,7 +5589,7 @@ body {
 }
 
 .btn-add-medication:hover {
-  background-color: #0f766e;
+  background-color: var(--secondary-dark, #0e7490);
   transform: translateY(-1px);
 }
 
@@ -5600,7 +5609,7 @@ body {
 
 .rx-empty-btn {
   background-color: #f1f5f9;
-  color: #0f766e;
+  color: var(--primary, #0f2b48);
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 0.45rem 1rem;
@@ -5639,8 +5648,8 @@ body {
 .rx-item-index {
   font-size: 0.85rem;
   font-weight: 800;
-  color: #0d9488;
-  background-color: #ccfbf1;
+  color: var(--secondary, #0891b2);
+  background-color: var(--secondary-light, #ecfeff);
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -5691,8 +5700,8 @@ body {
 }
 
 .rx-input:focus {
-  border-color: #0d9488;
-  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15);
+  border-color: var(--secondary, #0891b2);
+  box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.18);
 }
 
 .rx-input--bold {
@@ -5770,8 +5779,8 @@ body {
 
 .rx-clinic-logo {
   font-size: 2.25rem;
-  background-color: #f0fdfa;
-  border: 1px solid #ccfbf1;
+  background-color: var(--secondary-light, #ecfeff);
+  border: 1px solid var(--accent-light, #cffafe);
   width: 56px;
   height: 56px;
   border-radius: 12px;
@@ -5783,7 +5792,7 @@ body {
 .rx-clinic-name {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--primary, #0f2b48);
   margin: 0 0 0.2rem 0;
 }
 
@@ -5806,7 +5815,7 @@ body {
 .rx-doctor-name {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #0f766e;
+  color: var(--secondary, #0891b2);
   margin: 0 0 0.2rem 0;
 }
 
@@ -5824,7 +5833,7 @@ body {
 
 .rx-paper-divider {
   height: 3px;
-  background: linear-gradient(to right, #0d9488, #3b82f6, #0d9488);
+  background: linear-gradient(to right, #0891b2, #0f2b48, #0891b2);
   border-radius: 2px;
   margin: 1.25rem 0;
 }
@@ -5867,7 +5876,7 @@ body {
   font-size: 2.75rem;
   font-weight: 900;
   font-style: italic;
-  color: #0d9488;
+  color: var(--secondary, #0891b2);
   line-height: 1;
   margin-bottom: 0.75rem;
 }
@@ -5911,7 +5920,7 @@ body {
 }
 
 .rx-med-strength {
-  color: #0d9488;
+  color: var(--secondary, #0891b2);
   font-weight: 700;
 }
 
@@ -6036,7 +6045,7 @@ body {
   }
 
   .rx-symbol {
-    color: #0d9488 !important;
+    color: #0891b2 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -6052,7 +6061,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #0f2b48 0%, #16385e 100%);
   padding: 1.5rem;
   font-family: inherit;
 }
@@ -6060,8 +6069,8 @@ body {
 .auth-splash-card {
   background-color: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-  border: 1px solid #ccfbf1;
+  box-shadow: 0 10px 25px -5px rgba(15, 43, 72, 0.15), 0 8px 10px -6px rgba(15, 43, 72, 0.08);
+  border: 1px solid #e2e8f0;
   padding: 2.5rem 2rem;
   max-width: 440px;
   width: 100%;
@@ -6074,7 +6083,8 @@ body {
 
 .auth-splash-icon {
   font-size: 3rem;
-  background-color: #ccfbf1;
+  background-color: var(--secondary-light, #ecfeff);
+  border: 1px solid var(--accent-light, #cffafe);
   width: 72px;
   height: 72px;
   border-radius: 18px;
@@ -6087,7 +6097,7 @@ body {
 .auth-splash-title {
   font-size: 1.35rem;
   font-weight: 800;
-  color: #0f766e;
+  color: var(--primary, #0f2b48);
   margin: 0;
 }
 
@@ -6095,7 +6105,7 @@ body {
   width: 36px;
   height: 36px;
   border: 3.5px solid #e2e8f0;
-  border-top-color: #0f766e;
+  border-top-color: var(--secondary, #0891b2);
   border-radius: 50%;
   animation: authSpin 0.8s linear infinite;
   margin: 0.75rem 0;
@@ -6120,14 +6130,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f0fdfa 0%, #f1f5f9 50%, #e0f2fe 100%);
+  background: radial-gradient(circle at 10% 20%, #e8f1f8 0%, #f4f7fb 60%, #ecfeff 100%);
   padding: 1.5rem;
 }
 
 .login-card {
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(15, 43, 72, 0.1), 0 10px 10px -5px rgba(15, 43, 72, 0.04);
   border: 1px solid #e2e8f0;
   padding: 2.5rem;
   max-width: 500px;
@@ -6147,25 +6157,33 @@ body {
 
 .login-brand-icon {
   font-size: 2.75rem;
-  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+  border: 1px solid #a5f3fc;
   width: 64px;
   height: 64px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px -1px rgba(15, 118, 110, 0.1);
+  box-shadow: 0 4px 8px -1px rgba(8, 145, 178, 0.15);
 }
 
 .login-title {
   font-size: 1.45rem;
   font-weight: 800;
-  color: #0f766e;
+  color: var(--primary, #0f2b48);
   margin: 0;
 }
 
 .login-subtitle {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--secondary, #0891b2);
+  font-weight: 700;
+  margin: 0;
+}
+
+.login-contact-info {
+  font-size: 0.82rem;
   color: #64748b;
   margin: 0;
 }
@@ -6223,9 +6241,9 @@ body {
 
 .login-input:focus {
   outline: none;
-  border-color: #0d9488;
+  border-color: var(--secondary, #0891b2);
   background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.18);
 }
 
 .login-password-wrap {
@@ -6264,7 +6282,7 @@ body {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.5rem;
-  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  background: linear-gradient(135deg, #0f2b48 0%, #0a1c33 100%);
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -6272,14 +6290,14 @@ body {
   font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 4px 10px rgba(15, 43, 72, 0.25);
   margin-top: 0.5rem;
 }
 
 .btn-login-submit:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(15, 118, 110, 0.35);
-  background: linear-gradient(135deg, #115e59 0%, #042f2e 100%);
+  box-shadow: 0 6px 14px rgba(15, 43, 72, 0.35);
+  background: linear-gradient(135deg, #16385e 0%, #0f2b48 100%);
 }
 
 .btn-login-submit:disabled {
@@ -6346,11 +6364,11 @@ body {
 .login-roles-hint {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #0f766e;
-  background-color: #f0fdfa;
+  color: var(--secondary, #0891b2);
+  background-color: var(--secondary-light, #ecfeff);
   padding: 0.15rem 0.5rem;
   border-radius: 6px;
-  border: 1px solid #ccfbf1;
+  border: 1px solid var(--accent-light, #cffafe);
 }
 
 .login-role-card {
@@ -6372,10 +6390,10 @@ body {
 }
 
 .login-role-card--clickable:hover:not(:disabled) {
-  border-color: #0d9488;
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.16);
+  border-color: var(--secondary, #0891b2);
+  box-shadow: 0 4px 14px rgba(8, 145, 178, 0.18);
   transform: translateY(-2px);
-  background-color: #f0fdfa;
+  background-color: var(--secondary-light, #ecfeff);
 }
 
 .login-role-card--clickable:active:not(:disabled) {
@@ -6383,7 +6401,7 @@ body {
 }
 
 .login-role-card--clickable:focus-visible {
-  outline: 2px solid #0f766e;
+  outline: 2px solid var(--primary, #0f2b48);
   outline-offset: 2px;
 }
 
@@ -6398,8 +6416,8 @@ body {
 .login-role-action-pill {
   font-size: 0.72rem;
   font-weight: 800;
-  color: #0f766e;
-  background-color: #ccfbf1;
+  color: var(--secondary, #0891b2);
+  background-color: var(--secondary-light, #ecfeff);
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
   display: inline-flex;
@@ -6408,7 +6426,7 @@ body {
 }
 
 .login-role-card--clickable:hover:not(:disabled) .login-role-action-pill {
-  background-color: #0f766e;
+  background-color: var(--secondary, #0891b2);
   color: #ffffff;
 }
 
@@ -6423,9 +6441,9 @@ body {
 }
 
 .login-role-badge--doctor {
-  background-color: #ccfbf1;
-  color: #0f766e;
-  border: 1px solid #99f6e4;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary, #0891b2);
+  border: 1px solid var(--accent-light, #cffafe);
 }
 
 .login-role-badge--secretary {
@@ -6499,9 +6517,9 @@ body {
 }
 
 .user-role-badge--doctor {
-  background-color: #ccfbf1;
-  color: #0f766e;
-  border: 1px solid #99f6e4;
+  background-color: var(--secondary-light, #ecfeff);
+  color: var(--secondary, #0891b2);
+  border: 1px solid var(--accent-light, #cffafe);
 }
 
 .user-role-badge--secretary {
@@ -6533,7 +6551,7 @@ body {
 }
 
 .role-switch-link.active-doctor {
-  background-color: #0f766e !important;
+  background-color: var(--primary, #0f2b48) !important;
   color: #ffffff !important;
   font-weight: 800;
 }
@@ -6640,7 +6658,7 @@ body {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.75rem;
-  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  background: linear-gradient(135deg, #0f2b48 0%, #0a1c33 100%);
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -6648,13 +6666,13 @@ body {
   font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 4px 10px rgba(15, 43, 72, 0.25);
   width: 100%;
 }
 
 .btn-unauthorized-return:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(15, 118, 110, 0.3);
-  background: linear-gradient(135deg, #115e59 0%, #042f2e 100%);
+  box-shadow: 0 6px 14px rgba(15, 43, 72, 0.35);
+  background: linear-gradient(135deg, #16385e 0%, #0f2b48 100%);
 }
 

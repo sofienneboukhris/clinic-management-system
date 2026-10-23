@@ -65,8 +65,9 @@ export function LoginPage({ onLoginSuccess }) {
           <div className="login-brand-icon" aria-hidden="true">
             🏥
           </div>
-          <h1 className="login-title">عيادة الرعاية الطبية التخصصية</h1>
-          <p className="login-subtitle">نظام إدارة العيادة • بوابة تسجيل الدخول الموحدة</p>
+          <h1 className="login-title">عيادة الشفاء التخصصية</h1>
+          <p className="login-subtitle">عيادة د. أحمد محمود • باطنة وجهاز هضمي</p>
+          <p className="login-contact-info">العنوان: شارع المثال - القاهرة • هاتف: 01000000000</p>
         </div>
 
         {/* تنبيه الخطأ إن وجد */}

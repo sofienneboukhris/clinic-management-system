@@ -733,7 +733,7 @@ export function SecretaryView({
           </div>
           <div>
             <h2 className="secretary-sidebar__title">مكتب السكرتارية</h2>
-            <span className="secretary-sidebar__role-tag">الاستقبال والمواعيد</span>
+            <span className="secretary-sidebar__role-tag">عيادة الشفاء التخصصية</span>
           </div>
         </div>
 
@@ -2044,7 +2044,7 @@ export function SecretaryView({
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
                   <span style={{ fontSize: '0.85rem', color: '#64748b' }}>الطبيب المعالج:</span>
-                  <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#0f766e' }}>
+                  <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--primary, #0f2b48)' }}>
                     {appointmentToReschedule.doctorName || getDoctorById(appointmentToReschedule.doctorId)?.name || 'طبيب العيادة'}
                   </span>
                 </div>
@@ -2549,10 +2549,10 @@ export function SecretaryView({
                 <div>
                   <div className="invoice-paper-logo">
                     <span>🩺</span>
-                    <span>عيادة الرعاية الطبية التخصصية</span>
+                    <span>عيادة الشفاء التخصصية</span>
                   </div>
                   <div style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.25rem' }}>
-                    قسم الاستقبال والفوترة • هاتف: 01000000000
+                    د. أحمد محمود — باطنة وجهاز هضمي • العنوان: شارع المثال - القاهرة • هاتف: 01000000000
                   </div>
                 </div>
                 <div className="invoice-paper-meta">

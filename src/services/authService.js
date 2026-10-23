@@ -72,7 +72,7 @@ export const DEMO_ACCOUNTS = {
     profile: {
       id: 'doc-internal',
       email: 'doctor@clinic.com',
-      full_name: 'د. خالد العمري',
+      full_name: 'د. أحمد محمود',
       role: 'doctor',
     },
   },

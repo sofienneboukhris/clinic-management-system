@@ -73,7 +73,7 @@ export function PatientsView({ onAddNewPatient, onViewPatient, onBackToDashboard
             type="button"
             onClick={onAddNewPatient}
             className="btn-action-primary"
-            style={{ backgroundColor: '#ffffff', color: '#0f766e', fontWeight: 800, boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}
+            style={{ backgroundColor: '#ffffff', color: 'var(--primary, #0f2b48)', fontWeight: 800, boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}
             aria-label="إضافة مريض جديد"
           >
             <UserPlusIcon size={18} />

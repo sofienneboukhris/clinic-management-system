@@ -340,9 +340,9 @@ export function PatientProfilePage({
               className="btn-action-primary"
               aria-label="حجز موعد"
               style={{
-                backgroundColor: 'var(--teal-600, #0d9488)',
+                backgroundColor: 'var(--secondary, #0891b2)',
                 color: '#ffffff',
-                borderColor: 'var(--teal-600, #0d9488)',
+                borderColor: 'var(--secondary, #0891b2)',
               }}
             >
               <CalendarIcon size={16} />
@@ -600,8 +600,8 @@ export function PatientProfilePage({
                   className="btn-action-primary btn-sm"
                   title="حجز موعد جديد لهذا المريض"
                   style={{
-                    backgroundColor: 'var(--teal-600, #0d9488)',
-                    borderColor: 'var(--teal-600, #0d9488)',
+                    backgroundColor: 'var(--secondary, #0891b2)',
+                    borderColor: 'var(--secondary, #0891b2)',
                     color: '#fff',
                   }}
                 >
@@ -665,8 +665,8 @@ export function PatientProfilePage({
                     onClick={() => setIsBookingModalOpen(true)}
                     className="btn-action-primary btn-sm"
                     style={{
-                      backgroundColor: 'var(--teal-600, #0d9488)',
-                      borderColor: 'var(--teal-600, #0d9488)',
+                      backgroundColor: 'var(--secondary, #0891b2)',
+                      borderColor: 'var(--secondary, #0891b2)',
                       color: '#fff',
                     }}
                   >
@@ -857,7 +857,7 @@ export function PatientProfilePage({
                           <td>
                             <div style={{ maxWidth: '280px' }}>
                               {visit.diagnosis ? (
-                                <strong style={{ color: '#0f766e', display: 'block' }}>{visit.diagnosis}</strong>
+                                <strong style={{ color: 'var(--primary, #0f2b48)', display: 'block' }}>{visit.diagnosis}</strong>
                               ) : (
                                 <span className="text-muted">تشخيص قيد الاستكمال</span>
                               )}
